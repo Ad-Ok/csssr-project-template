@@ -4,25 +4,20 @@ mixin script(scripts)
 		- src = (/^(https?:)?\/\//.test(src) ? src : 'assets/scripts/' + src) + '?' + timestamp;
 		script(src=src)
 
-mixin tools(list)
-		ul.list
-			each item in list
-				li.list__item
-					span.mark= item[0]
-					= ' - ' + item[1]
+mixin input_text(label, value, id, field_class)
+	.form_row(class=field_class)
+		label.form__label(for=id)=label
+		input.form__input_text(type='text', id=id, value=value)
 
-mixin file(file)
-	li.list__item.list__item_type_file= file
-
-mixin folder(item)
-	li.list__item.list__item_type_folder= item.folder
-		if item.content
-			+tree(item.content)
-
-mixin tree(tree)
-	ul.list.list_type_files
-		each item in tree
-			if item.folder
-				+folder(item)
-			else if item.file
-				+file(item.file)
+mixin checkboxes(list, mass_id)
+	- var i= 0
+	each item in list
+		.form_row
+			input.input-checkbox(
+				id=mass_id + 'input' + i
+				type='checkbox'
+				checked= item[1])
+			label.form__label.checkbox(
+				for=mass_id + 'input' + i)
+				= item[0]
+		- i++

@@ -17,6 +17,7 @@ Thumbs.db
 .cache
 .project
 .settings
+.gitignore
 .tmproj
 *.sublime-project
 *.sublime-workspace
@@ -35,3 +36,5 @@ npm-debug.log
 
 # Binaries
 *.exe
+
+/dist/*
