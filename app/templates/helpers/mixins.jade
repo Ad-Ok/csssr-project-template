@@ -5,19 +5,19 @@ mixin script(scripts)
 		script(src=src)
 
 mixin input_text(label, value, id, field_class)
-	.form_row(class=field_class)
+	.form__row(class=field_class)
 		label.form__label(for=id)=label
-		input.form__input_text(type='text', id=id, value=value)
+		input.form__input--text(type='text', id=id, value=value)
 
 mixin checkboxes(list, mass_id)
 	- var i= 0
 	each item in list
-		.form_row
-			input.input-checkbox(
+		.form__row
+			input.form__input--checkbox(
 				id=mass_id + 'input' + i
 				type='checkbox'
 				checked= item[1])
-			label.form__label.checkbox(
+			label.form__label.label--checkbox(
 				for=mass_id + 'input' + i)
 				= item[0]
 		- i++

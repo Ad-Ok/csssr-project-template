@@ -1,23 +1,23 @@
 form.form
-	.form_chapter__main_info.inputs_width_fullwidth
-		+input_text('Полное ФИО', 'Иванов Иван Иванович', 'id0')
-		+input_text('Год рождения', '1990', 'id1')
-		+input_text('Место жительства', 'г. Иваново, Россия', 'id2')
-		+input_text('Скайп', 'ivanov', 'id3')
-		+input_text('Почта', 'ivanov@gmail.com', 'id4')
+	.form__chapter--main_info
+		+input_text('Полное ФИО', 'Огиенко Александр Васильевич', 'id0', 'inputs_width--fullwidth')
+		+input_text('Год рождения', '1983', 'id1', 'inputs_width--fullwidth')
+		+input_text('Место жительства', 'сейчас - Муйне (Вьетнам)', 'id2', 'inputs_width--fullwidth')
+		+input_text('Скайп', 'ad_oknov', 'id3', 'inputs_width--fullwidth')
+		+input_text('Почта', 'adolf.oknov@gmail.com', 'id4', 'inputs_width--fullwidth')
 		
-	.form_chapter__htmlacademy
-		.form_row
+	.form__chapter--htmlacademy
+		.form__row
 			.chapter_header Выпускник 
-				a(href='http://htmlacademy.ru/', target='_blanc') htmlacademy.ru
-			input.input-radio(type='radio', value='1', name='is_htmlacademy', id='radio1', checked)
-			label.form__label.radio(for='radio1') Да 
-			input.input-radio(type='radio', value='0', name='is_htmlacademy', id='radio2')
-			label.form__label.radio(for='radio2') Нет
+				a(href='http://htmlacademy.ru/', target='_blank') htmlacademy.ru
+			input.form__input--radio(type='radio', value='1', name='is_htmlacademy', id='radio1')
+			label.form__label.label--radio(for='radio1') Да 
+			input.form__input--radio(type='radio', value='0', name='is_htmlacademy', id='radio2', checked)
+			label.form__label.label--radio(for='radio2') Нет
 			
-	.form_chapter__practic_skills
+	.form__chapter--practic_skills
 		.chapter_header Практические навыки
-		.chapter_description.text_small.star Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+		.chapter_description Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
 		.container
 			.col.col1
 				+checkboxes([
@@ -47,21 +47,21 @@ form.form
 					['Использую GitHub']
 				], 'col3')
 	
-	.form_chapter__javascript_skills
+	.form__chapter--javascript_skills
 		.chapter_header Уровень владения JavaScript
-		ul.skills_selector
-			li.skills_selector_item.item0
-				input.skills_selector_item_input(type='radio' value='0', name='skills_selector', id='skills_selector0')
-				label.form__label.skills_selector_item_label(for='skills_selector0') Не владею
-			li.skills_selector_item.item1
-				input.skills_selector_item_input(type='radio' value='1', name='skills_selector', id='skills_selector1', checked)
-				label.form__label.skills_selector_item_label(for='skills_selector1') Использую готовые решения
-			li.skills_selector_item.item2
-				input.skills_selector_item_input(type='radio' value='2', name='skills_selector', id='skills_selector2')
-				label.form__label.skills_selector_item_label(for='skills_selector2') Использую готовые решения<br>и умею их переделывать
-			li.skills_selector_item.item3
-				input.skills_selector_item_input(type='radio' value='3', name='skills_selector', id='skills_selector3')
-				label.form__label.skills_selector_item_label(for='skills_selector3') Пишу сложные скрипты
+		ul.skills_selector.js-slider
+			li.skills_selector__item.item0
+				input.skills_selector__item_input.form__input--radio(type='radio' value='0', name='skills_selector', id='skills_selector0')
+				label.form__label.skills_selector__item_label(for='skills_selector0') Не владею
+			li.skills_selector__item.item1
+				input.skills_selector__item_input.form__input--radio(type='radio' value='1', name='skills_selector', id='skills_selector1')
+				label.form__label.skills_selector__item_label(for='skills_selector1') Использую готовые решения
+			li.skills_selector__item.item2
+				input.skills_selector__item_input.form__input--radio(type='radio' value='2', name='skills_selector', id='skills_selector2', checked)
+				label.form__label.skills_selector__item_label(for='skills_selector2') Использую готовые решения<br>и умею их переделывать
+			li.skills_selector__item.item3
+				input.skills_selector__item_input.form__input--radio(type='radio' value='3', name='skills_selector', id='skills_selector3')
+				label.form__label.skills_selector__item_label(for='skills_selector3') Пишу сложные скрипты
 		
-	.form_chapter__main_info
-		+input_text('Дата заполнения', '01.01.2014', 'id5', 'filling_date')
+	.form__chapter--main_info
+		+input_text('Дата заполнения', '12.11.2014', 'id5', 'filling_date')

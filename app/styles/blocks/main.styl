@@ -1,95 +1,139 @@
 .container
-	@media screen and (min-width: 541px)
-		display table
-
-.col
-	@media screen and (max-width: 540px)
-		display table
-		margin 0 auto 20px
-
-	@media screen and (min-width: 541px)
+	display table
+	.col
 		display table-cell
 		vertical-align top
 		width 1%
 
 // my changes
 
-.as_picture
-	height 140px
-	margin-top 30px
-	color transparent
-	font-size 0
-	background url(../images/h1.png) 47% 0px no-repeat
-	margin-bottom 21px
-
-		
 .form
-	&_row
-		margin-bottom 5px
 	.chapter_header
 		margin-bottom 12px
 		font-size 1.020em
 		font-weight bold
+	.chapter_description
+		margin-bottom 22px
+		color #3d3d3d
+		font-size 14px
+		line-height 22px
+		position relative
+		padding-left 18px
+		&:before
+			position absolute
+			top 0
+			left 0
+			content '*'
+			width 18px
+			font-size 36px
+			line-height: 100%;
+	&__row
+		margin-bottom 5px
 	&__label
 		font-weight bold
-	&__input_text
+	&__input--text
 			background transparent url(../images/input_underline.jpg) center bottom repeat-x
 			border 0
 			font-family "Courier New", Courier, monospace
 			font-size 30px
 			
-	&_chapter__main_info
+	// checkboxes & radio styling
+
+	&__input--checkbox,
+	&__input--radio
+		display none
+
+	&__input--checkbox
+		&:checked
+			& + .label--checkbox
+				&:after
+					opacity 1
+
+	&__input--radio
+		&:checked
+			& + .label--radio
+				&:after
+					opacity 1
+
+	.label--checkbox
+		position relative
+		display inline-block
+		padding-left 27px
+		cursor pointer
+		color #000
+		font-size 21px
+		line-height 25px
+		&:before
+			position absolute
+			top 3px
+			left 1px
+			content ''
+			sprite $checkbox-bg
+		&:after
+			position absolute
+			top -3px
+			left 0
+			margin -3px 0 0 5px
+			opacity 0
+			content ''
+			sprite $checkbox-check
+
+	.label--radio
+		position relative
+		padding-left 33px
+		margin-right 16px
+		cursor pointer
+		&:before
+			position absolute
+			top 3px
+			left 0
+			content ''
+			sprite $radio-bg
+		&:after
+			position absolute
+			top 3px
+			left 0
+			margin 7px
+			opacity 0
+			content ''
+			sprite $radio-dot
+			
+
+	&__chapter--main_info
 		margin-bottom 50px
-		label
+		.form__label
 			display inline-block
 			padding-right 15px
 			vertical-align bottom
 			white-space nowrap
 			font-size 1.020em
-			line-height: 30px;
-		input
+			line-height 30px
+		.form__input--text
+			height 56px
 			padding 11px 13px
 
 		.filling_date
-			.form__input_text
-				width 230px
+			.form__input--text
+				width 205px
 		
-	&_chapter__main_info.inputs_width_fullwidth
-		.form_row
-			display table	
+	&__row.inputs_width--fullwidth
+		display table	
+		width 100%
+		label
+			display table-cell
+			width 1%
+		input
+			display table-cell
 			width 100%
-			label
-				display table-cell
-				width 1%
-			input
-				display table-cell
-				width 100%
 
-	&_chapter__htmlacademy
+	&__chapter--htmlacademy
 		margin-bottom 37px
 		.chapter_header
 			display inline-block
-			margin-right 30px
+			padding-right 24px
 			
-	&_chapter__practic_skills
+	&__chapter--practic_skills
 		margin-bottom 68px
-		.chapter_description
-			margin-bottom 22px
-		.text_small
-			color #3d3d3d
-			font-size 14px
-			line-height 22px
-		.star
-			position relative
-			padding-left 18px
-			&:before
-				position absolute
-				top 0
-				left 0
-				content '*'
-				width 18px
-				font-size 36px
-				line-height: 100%;
 		.container
 			.col1
 				width 260px
@@ -99,10 +143,10 @@
 				margin-right 10px
 			.col3
 				width auto
-		.form_row
-			margin-bottom 13px
+		.form__row
+			margin-bottom 10px
 				
-	&_chapter__javascript_skills
+	&__chapter--javascript_skills
 		margin-bottom 32px
 		padding-left: 13px;
 		.chapter_header
@@ -119,7 +163,7 @@
 		.skills_selector
 			position relative
 			background transparent url(../images/input_underline.jpg) center top repeat-x
-			&_item
+			&__item
 				position relative
 				display inline-block
 				vertical-align top
@@ -133,8 +177,6 @@
 					border-left 2px solid #41261f
 				&:first-child:before
 					content none
-				&_input
-					display none
 				&_label
 					display block
 					padding-top 28px
@@ -150,82 +192,14 @@
 				content ''
 				border-left 2px solid #41261f
 				border-right 2px solid #41261f
-			&_item.item0
-				width 144px
-			&_item.item1
-				width 225px
-			&_item.item2
+			&__item.item0
+				width 140px
+			&__item.item1
+				width 220px
+			&__item.item2
 				width 230px
-			&_item.item3
+			&__item.item3
 				float right
 				text-align right
 				&:before
 					content none
-			
-// checkboxes & radio styling sprite $filename
-
-.input-checkbox,
-.input-radio
-	display none
-
-.input-checkbox
-	&:checked
-		& + .checkbox
-			&:after
-				opacity 1
-
-.input-radio
-	&:checked
-		& + .radio
-			&:after
-				opacity 1
-
-.checkbox
-	position relative
-	display inline-block
-	padding-left 27px
-	cursor pointer
-	color #000
-	font-size 21px
-	&:before
-		position absolute
-		top 3px
-		left 1px
-		content ''
-		sprite $checkbox-bg
-	&:after
-		position absolute
-		top -3px
-		left 0
-		margin -3px 0 0 5px
-		opacity 0
-		content ''
-		sprite $checkbox-check
-
-.radio
-	position relative
-	padding-left 33px
-	margin-right 16px
-	cursor pointer
-	&:before
-		position absolute
-		top 3px
-		left 0
-		content ''
-		sprite $radio-bg
-	&:after
-		position absolute
-		top 3px
-		left 0
-		margin 7px
-		opacity 0
-		content ''
-		sprite $radio-dot
-.test
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 2000px
-	background transparent url(../images/anketa.png) center top no-repeat
-	opacity .5

@@ -1,7 +1,9 @@
+/* Form slider based on JQuery UI */
+
 $(function () {
 	'use strict';
-	var values = [0, 152, 380, 748];
-	var select = $('ul.skills_selector');
+	var values = [0, 147, 371, 748];
+	var select = $('.js-slider');
 	var slider = $('<div id="slider" class="slider"></div>').insertBefore(select).slider({
 		min: 0,
 		max: 750,
